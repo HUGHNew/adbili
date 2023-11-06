@@ -1,0 +1,9 @@
+key
+key.pub
+__pycache__
+
+# test files
+entry.json
+entry.tmp.json
+index.json
+test.py

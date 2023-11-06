@@ -1,0 +1,3 @@
+fire
+adb-shell
+adb-shell[usb]
