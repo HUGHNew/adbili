@@ -12,6 +12,10 @@ TODO:
 python3 main.py --app com.bilibili.app.in # 只处理 Play 版本的下载内容
 ```
 
+## problems
+
+- 音频文件没有在头部保存如同一般歌曲的缩率图和歌手等歌曲相关信息
+
 ## introduction
 
 appId:
@@ -27,8 +31,8 @@ App
 - download
   - <avid>
     - <cid>
-      - <video_quality>
-        - audio.m4s
+      - <video_quality> # 音质与视频清晰度正相关 360P与1080P有稍微明显一点的差距
+        - audio.m4s # 实际的 mp3 音频文件
         - index.json
         - video.m4s
       - danmaku.xml
@@ -36,6 +40,18 @@ App
 - files
 
 > 版本不同 entry.json 里面的字段有差异
+
+video_quality:
+- 360P -> 16
+- 480P -> 32 (猜测)
+- 720P -> 64
+- 1080P -> 80
+
+某个视频的音频文件在不同清晰度下的文件大小
+- 360P -> 617K
+- 720P -> 2.23M
+
+## test
 
 已测试版本
 - tv.danmaku.bili : 6.40.0

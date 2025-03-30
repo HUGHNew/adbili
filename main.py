@@ -12,7 +12,7 @@ from functools import partial
 from adb_shell.adb_device import AdbDevice
 import fire
 
-from constant import Bili, Music, Entry
+from constant import Bili, Music, Entry, TimeoutSecond
 from command import app_exist, collect_entries, get_audio_m4s
 from utils import (
     get_default_device,
@@ -41,7 +41,7 @@ def process_app(
 
         if not filter_partial(entry):
             continue  # apply filter
-        dest = entry.title
+        dest = entry.title.strip()
         if prompt:
             opt = get_line(f"audio name: [{entry.title}] (Press , to skip) ")
             if opt == ",":
@@ -63,7 +63,7 @@ def main(
     if app:
         assert app in Bili, f"Unknown appId: {app}. It is not in {Bili}"
     device = get_default_device(serial)
-    avail = device.connect(rsa_keys=get_default_signer(private))
+    avail = device.connect(rsa_keys=get_default_signer(private), auth_timeout_s=TimeoutSecond, read_timeout_s=TimeoutSecond)
     if not avail:
         print("connecting error")
         return

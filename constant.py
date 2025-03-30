@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+TimeoutSecond = 5 # 5s for timeout
+
 Bili = [
     "tv.danmaku.bili", # Bilibili CN
     "com.bilibili.app.in", # Bilibili Google Play
