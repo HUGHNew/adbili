@@ -2,14 +2,10 @@
 
 adb copier for bilibili songs/audios
 
-TODO:
-- [ ] dist/package
-- [ ] use case
-
 ## usage
 
 ```bash
-python3 main.py --app com.bilibili.app.in # 只处理 Play 版本的下载内容
+adbili --app com.bilibili.app.in # 只处理 Play 版本的下载内容
 ```
 
 ## problems
@@ -29,7 +25,7 @@ appId:
 App
 - cache
 - download
-  - <avid>
+  - <avid> # avid 不唯一时 说明是合集
     - <cid>
       - <video_quality> # 音质与视频清晰度正相关 360P与1080P有稍微明显一点的差距
         - audio.m4s # 实际的 mp3 音频文件
@@ -55,6 +51,6 @@ video_quality:
 
 已测试版本
 - tv.danmaku.bili : 6.40.0
-- com.bilibili.app.in : 3.16.0
+- com.bilibili.app.in : 3.20.3
 已测试系统
-- MIUI 14.0.\*
+- HyperOS 1.0.8

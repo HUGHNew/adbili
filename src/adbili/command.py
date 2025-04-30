@@ -1,4 +1,4 @@
-from constant import AndroidData, EntryJson, AudioFile
+from .constant import AndroidData, EntryJson, AudioFile
 
 
 def app_exist(appid: str):
@@ -19,7 +19,6 @@ def get_entry_json(appid: str, avid: str, cid: str):
 
 def collect_entries(appid: str):
     return f"ls {AndroidData}/{appid}/download/*/*/{EntryJson}"
-
 
 def get_audio_m4s(entry: str, tag: str):
     entry_dir = entry[: -len(EntryJson)]
